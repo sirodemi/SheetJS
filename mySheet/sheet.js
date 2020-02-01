@@ -21,6 +21,7 @@
                 output = to_json(wb);
 
                 /////////////////////////////////   ここでデータを取り出す   ////////////////////////////////////////
+                /*
                 for (var item in output) {
                     console.log("output:",output,"    item: ",item)
                     for (var subItem in output[item]) {
@@ -36,6 +37,7 @@
                         }
                     }
                 }
+                */
 
                 var sheet = new Array(10);
                 for(let y = 0; y < 10; y++) {
@@ -50,18 +52,63 @@
                     }
                 }
 
-                for(j=0;j<10;j++){
-                    for(i=0;i<10;i++){
-                        console.log(sheet[j][i]);
+
+                // ------------------------------------------------------------
+                // HTMLTableElement オブジェクトを作成する
+                // ------------------------------------------------------------
+                var table = document.createElement("table");
+
+                // BODY のノードリストに登録する
+                document.body.appendChild(table);
+
+                // ------------------------------------------------------------
+                // テーブルを構築する
+                // ------------------------------------------------------------
+
+                // 行、列、セル代入を追加
+                var tr=[];
+                var td=[];
+                for(i=0;i<5;i++){
+                    tr[i] = table.insertRow(-1);
+                    for(j=0;j<5;j++){
+                        td[i * 5 + j] = tr[i].insertCell(-1);
+                        td[i * 5 + j].align = "right";
+                        td[i * 5 + j].innerHTML = sheet[i][j + 1];
                     }
                 }
+
+   
+                // ------------------------------------------------------------
+                // テーブルの設定
+                // ------------------------------------------------------------
+                // テーブルの幅を設定
+                table.width = "400";
+
+                // 背景カラーを設定
+                table.bgColor = "#eee";
+
+                // テーブルの外周線の太さを設定
+                table.border = "2";
+
+                // テーブルの外周線のルールを設定
+                table.frame = "box";
+
+                // テーブル内の線ルールを設定
+                table.rules = "all";
+
+                // セルの内周余白量を設定
+                table.cellPadding = "4";
+
+                // セルの外周余白量を設定
+                table.cellSpacing = "0";
+
+                // 概要を設定
+                table.summary = "";
+
+                table.align = "center";
+
+
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-                $("pre#result").html(JSON.stringify(output, null, 2));
 
             };
             reader.readAsArrayBuffer(f);
