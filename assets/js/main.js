@@ -12,23 +12,6 @@ var spinner;
 var _workstart = function() { spinner = new Spinner().spin(_target); }
 var _workend = function() { spinner.stop(); }
 
-/** Alerts **/
-var _badfile = function() {
-  alertify.alert('This file does not appear to be a valid Excel file.  If we made a mistake, please send this file to <a href="mailto:dev@sheetjs.com?subject=I+broke+your+stuff">dev@sheetjs.com</a> so we can take a look.', function(){});
-};
-
-var _pending = function() {
-  alertify.alert('Please wait until the current file is processed.', function(){});
-};
-
-var _large = function(len, cb) {
-  alertify.confirm("This file is " + len + " bytes and may take a few moments.  Your browser may lock up during this process.  Shall we play?", cb);
-};
-
-var _failed = function(e) {
-  console.log(e, e.stack);
-  alertify.alert('We unfortunately dropped the ball here.  Please test the file using the <a href="/js-xlsx/">raw parser</a>.  If there are issues with the file processor, please send this file to <a href="mailto:dev@sheetjs.com?subject=I+broke+your+stuff">dev@sheetjs.com</a> so we can make things right.', function(){});
-};
 
 /* make the buttons for the sheets */
 var make_buttons = function(sheetnames, cb) {
