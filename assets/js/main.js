@@ -61,22 +61,3 @@ var _onsheet = function(json, sheetnames, select_sheet_cb) {
   /* load data */
   cdg.data = json;
 };
-
-/** Drop it like it's hot **/
-DropSheet({
-  file: _file,
-  drop: _target,
-  on: {
-    workstart: _workstart,
-    workend: _workend,
-    sheet: _onsheet,
-    foo: 'bar'
-  },
-  errors: {
-    badfile: _badfile,
-    pending: _pending,
-    failed: _failed,
-    large: _large,
-    foo: 'bar'
-  }
-})
