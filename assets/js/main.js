@@ -2,26 +2,20 @@
 /* vim: set ts=2: */
 
 /** drop target **/
-var _target = document.getElementById('drop');
 
+var _target = document.getElementById('drop');
 console.log(_target)
 
-var _file = document.getElementById('file');
 
+var _file = document.getElementById('file');
 console.log(_file)
 
 
-var _grid = document.getElementById('grid');
-
-console.log(_grid)
-
-
-
 /** Spinner **/
-var spinner;
+//var spinner;
 
-var _workstart = function() { spinner = new Spinner().spin(_target); }
-var _workend = function() { spinner.stop(); }
+//var _workstart = function() { spinner = new Spinner().spin(_target); }
+//var _workend = function() { spinner.stop(); }
 
 
 /* make the buttons for the sheets */
@@ -41,23 +35,13 @@ var make_buttons = function(sheetnames, cb) {
 };
 
 
-function _resize() {
-  _grid.style.height = (window.innerHeight - 200) + "px";
-  _grid.style.width = (window.innerWidth - 200) + "px";
-}
-window.addEventListener('resize', _resize);
-
 var _onsheet = function(json, sheetnames, select_sheet_cb) {
 
 console.log(json)
 
-//  document.getElementById('footnote').style.display = "none";
+//worksheet選択ボタン
+make_buttons(sheetnames, select_sheet_cb);
 
-  make_buttons(sheetnames, select_sheet_cb);
-
-  /* show grid */
-  //_grid.style.display = "block";
-  //_resize();
 
   /* set up table headers */
   var L = 0;
@@ -75,8 +59,8 @@ DropSheet({
   file: _file,
   drop: _target,
   on: {
-    workstart: _workstart,
-    workend: _workend,
+//    workstart: _workstart,
+//    workend: _workend,
     sheet: _onsheet,
     foo: 'bar'
   }
