@@ -40,16 +40,6 @@ var make_buttons = function(sheetnames, cb) {
   });
 };
 
-/*
-var cdg = canvasDatagrid({
-  parentNode: _grid
-});
-*/
-
-/*
-cdg.style.height = '100%';
-cdg.style.width = '100%';
-*/
 
 function _resize() {
   _grid.style.height = (window.innerHeight - 200) + "px";
@@ -61,13 +51,13 @@ var _onsheet = function(json, sheetnames, select_sheet_cb) {
 
 console.log(json)
 
-  document.getElementById('footnote').style.display = "none";
+//  document.getElementById('footnote').style.display = "none";
 
   make_buttons(sheetnames, select_sheet_cb);
 
   /* show grid */
-  _grid.style.display = "block";
-  _resize();
+  //_grid.style.display = "block";
+  //_resize();
 
   /* set up table headers */
   var L = 0;
@@ -77,10 +67,6 @@ console.log(json)
     json[0][i] = "";
   }
 
-  /* load data */
-  /*
-  cdg.data = json;
-  */
 };
 
 /** Drop it like it's hot **/
