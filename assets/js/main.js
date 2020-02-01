@@ -11,12 +11,6 @@ var _file = document.getElementById('file');
 console.log(_file)
 
 
-/** Spinner **/
-//var spinner;
-
-//var _workstart = function() { spinner = new Spinner().spin(_target); }
-//var _workend = function() { spinner.stop(); }
-
 
 /* make the buttons for the sheets */
 var make_buttons = function(sheetnames, cb) {
@@ -37,18 +31,23 @@ var make_buttons = function(sheetnames, cb) {
 
 var _onsheet = function(json, sheetnames, select_sheet_cb) {
 
-console.log(json)
+  console.log(json)
+  console.log(sheetnames)
+  console.log(select_sheet_cb)
 
-//worksheet選択ボタン
-make_buttons(sheetnames, select_sheet_cb);
+  //worksheet選択ボタン
+  make_buttons(sheetnames, select_sheet_cb);
 
 
   /* set up table headers */
   var L = 0;
+
   json.forEach(function(r) { if(L < r.length) L = r.length; });
-  console.log(L);
+  console.log('Lて何？',L);
+  //L 列の長さ
   for(var i = json[0].length; i < L; ++i) {
     json[0][i] = "";
+    console.log('json[0][i]',json[0][i])
   }
 
 };
@@ -59,8 +58,6 @@ DropSheet({
   file: _file,
   drop: _target,
   on: {
-//    workstart: _workstart,
-//    workend: _workend,
     sheet: _onsheet,
     foo: 'bar'
   }
