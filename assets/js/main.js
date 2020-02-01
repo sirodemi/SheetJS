@@ -4,15 +4,10 @@
 /** drop target **/
 
 var _target = document.getElementById('drop');
-console.log(_target)
-
-
 var _file = document.getElementById('file');
-console.log(_file)
 
 
-
-/* make the buttons for the sheets */
+/* worksheetを選択ボタンで切替えた時 */
 var make_buttons = function(sheetnames, cb) {
   var buttons = document.getElementById('buttons');
   buttons.innerHTML = "";
@@ -54,6 +49,8 @@ var _onsheet = function(json, sheetnames, select_sheet_cb) {
 
 /** Drop it like it's hot **/
 
+
+
 DropSheet({
   file: _file,
   drop: _target,
@@ -62,3 +59,4 @@ DropSheet({
     foo: 'bar'
   }
 })
+
