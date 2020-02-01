@@ -3,8 +3,19 @@
 
 /** drop target **/
 var _target = document.getElementById('drop');
+
+console.log(_target)
+
 var _file = document.getElementById('file');
+
+console.log(_file)
+
+
 var _grid = document.getElementById('grid');
+
+console.log(_grid)
+
+
 
 /** Spinner **/
 var spinner;
@@ -29,11 +40,16 @@ var make_buttons = function(sheetnames, cb) {
   });
 };
 
+/*
 var cdg = canvasDatagrid({
   parentNode: _grid
 });
+*/
+
+/*
 cdg.style.height = '100%';
 cdg.style.width = '100%';
+*/
 
 function _resize() {
   _grid.style.height = (window.innerHeight - 200) + "px";
@@ -42,6 +58,9 @@ function _resize() {
 window.addEventListener('resize', _resize);
 
 var _onsheet = function(json, sheetnames, select_sheet_cb) {
+
+console.log(json)
+
   document.getElementById('footnote').style.display = "none";
 
   make_buttons(sheetnames, select_sheet_cb);
@@ -59,8 +78,9 @@ var _onsheet = function(json, sheetnames, select_sheet_cb) {
   }
 
   /* load data */
+  /*
   cdg.data = json;
-  console.log(cdg.data)
+  */
 };
 
 /** Drop it like it's hot **/
