@@ -6,45 +6,26 @@
     <title>SheetJS Live Grid Demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" type="image/png" href="assets/img/logo.png" />
-    <link rel="stylesheet" href="assets/css/sheetjs.css">
   </head>
+
   <body>
-    <script src="assets/vendor/alertify.js"></script>
-    <script src="//unpkg.com/canvas-datagrid/dist/canvas-datagrid.js"></script>
 
-    <link rel="stylesheet" media="screen" href="assets/vendor/samples.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/alertify.css">
-
-    <div id="body">
-      <div id="left">
-        <!--
-        <div id="logo">
-          <a href="http://sheetjs.com"><img src="assets/img/logo.png" class="logo" alt="SheetJS Logo" width=128px height=128px /></a>
-        </div>
-      -->
-      
-      <div id="drop">Drop a file</div>
-      
-      <input type="file" id="file" value=""/>
-      <h3> worksheetを選択:</h3>
-      <div id="buttons"></div>
-    </div>
-    <div id="right">
-      <div id="header">
-        <pre id="out"></pre>
-        <h2>Sunyou Machine_Maintenance Report Sysytem</h2>
-        <h3>
-          ファイルを左の窓にドロップするか、「ファイルを選択」ボタンを押してファイルを選んで下さい
-        </h3>
-      </div>
-
-    <script src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <!--消さない-->
     
+    <div id="drop"></div>
+
+    <h4>Sunyou Machine_Maintenance Report Sysytem</h4>
+    <h5>「ファイルを選択」ボタンを押してファイルを選んで下さい</h5>
+
+    <input type="file" id="file" value=""/>
+    <h5> worksheet切替:</h5>
+    <div id="buttons"></div>
+
+
+<!--下記scriptは重要-->
+    <script src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <script src="assets/js/dropsheet.js"></script>
-  
     <script src="assets/js/main.js"></script>
-
-
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-36810333-1']);
