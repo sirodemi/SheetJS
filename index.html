@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- xlsx.js (C) 2013-present  SheetJS http://sheetjs.com -->
-<!-- vim: set ts=2: -->
 <html>
   <head>
     <title>SheetJS Live Grid Demo</title>
@@ -10,19 +8,19 @@
 
   <body>
 
-    <!--消さない-->
-    
+    <!--消すとエラーが出る-->
     <div id="drop"></div>
-
-    <h4>Sunyou Machine_Maintenance Report Sysytem</h4>
-    <h5>「ファイルを選択」ボタンを押してファイルを選んで下さい</h5>
-
+    
+    <h4>Sunyou Machine_Maintenance Report</h4>
+    <h7>「ファイルを選択」ボタンを押してファイルを選んで下さい</h7>
+    <br>
     <input type="file" id="file" value=""/>
-    <h5> worksheet切替:</h5>
+    <br>
+    <h9> worksheet切替:</h9>
     <div id="buttons"></div>
 
 
-<!--下記scriptは重要-->
+    <!--下記scriptは重要-->
     <script src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <script src="assets/js/dropsheet.js"></script>
     <script src="assets/js/main.js"></script>

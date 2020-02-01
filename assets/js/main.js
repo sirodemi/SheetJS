@@ -26,13 +26,8 @@ var make_buttons = function(sheetnames, cb) {
 
 var _onsheet = function(json, sheetnames, select_sheet_cb) {
 
-  console.log(json)
-  console.log(sheetnames)
-  console.log(select_sheet_cb)
-
   //worksheet選択ボタン
   make_buttons(sheetnames, select_sheet_cb);
-
 
   /* set up table headers */
   var L = 0;
@@ -48,9 +43,6 @@ var _onsheet = function(json, sheetnames, select_sheet_cb) {
 };
 
 /** Drop it like it's hot **/
-
-
-
 DropSheet({
   file: _file,
   drop: _target,
