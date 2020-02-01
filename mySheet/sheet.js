@@ -39,15 +39,15 @@
                 }
                 */
 
+                //sheet配列にデータを格納する。　注意！！(Excelのタグ1のみ)//
                 var sheet = new Array(10);
-                for(let y = 0; y < 10; y++) {
+                for(let y=0; y<10; y++) {
                     sheet[y] = new Array(10).fill(0);
                 }
-
-                for(j=0;j<8;j++){
-                    for(i=0;i<10;i++){
-                        if(output.math[j][i] != undefined){
-                            sheet[j][i] = output.math[j][i];
+                for(j=0; j<8; j++){
+                    for(i=0; i<10; i++){
+                        if(output[1][j][i] != undefined){
+                            sheet[j][i] = output[1][j][i];
                         }
                     }
                 }
